@@ -1,0 +1,284 @@
+/* Google Fonts - Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #5b7bff; /* 약간 밝은 파란색 */
+    --secondary-color: #8c9eff; /* 더 밝은 파란색 */
+    --accent-color: #ffda79; /* 포인트 컬러 */
+    --text-color: #333;
+    --light-text-color: #666;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --box-shadow-medium: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: var(--box-shadow-medium);
+}
+
+.header h1 {
+    margin-top: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px 0;
+}
+
+/* Search Section */
+.search-section {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.search-box input[type="text"] {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+.search-box button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-box button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.search-box button:active {
+    transform: translateY(0);
+}
+
+.search-tip {
+    font-size: 0.95em;
+    color: var(--light-text-color);
+    margin-top: 10px;
+}
+
+/* Laundry List Section */
+.laundry-list-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.laundry-list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 반응형 그리드 */
+}
+
+.no-results {
+    text-align: center;
+    grid-column: 1 / -1; /* 그리드 전체 너비 차지 */
+    color: var(--light-text-color);
+    font-size: 1.1em;
+    padding: 30px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+}
+
+.laundry-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.laundry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.laundry-card-header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 20px;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.laundry-card-body {
+    padding: 20px;
+}
+
+.laundry-card-body h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.laundry-info p {
+    font-size: 0.95em;
+    color: var(--light-text-color);
+    margin-bottom: 5px;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.price-table th, .price-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+}
+
+.price-table th {
+    background-color: #f0f0f0;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.price-table td {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.price-table tr:nth-child(even) td {
+    background-color: #fbfbfb;
+}
+
+.note {
+    font-size: 0.85em;
+    color: var(--light-text-color);
+    margin-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-color);
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-box input[type="text"],
+    .search-box button {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .laundry-list {
+        grid-template-columns: 1fr; /* 모바일에서는 한 줄에 하나씩 */
+    }
+
+    .laundry-card-header {
+        font-size: 1.4em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+    .main-content {
+        padding: 20px 0;
+    }
+    .search-section {
+        padding: 20px;
+    }
+    .search-box input[type="text"],
+    .search-box button {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+    .laundry-card-body {
+        padding: 15px;
+    }
+    .price-table th, .price-table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
